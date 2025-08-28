@@ -1,0 +1,41 @@
+text|label
+Prezados, necessito urgente da planilha de custos atualizada com os valores do último trimestre para apresentação à diretoria amanhã às 14h. Incluam todas as notas fiscais pendentes.|1
+Olá! Gostaria de agradecer pelo excelente trabalho durante o evento de lançamento. A equipe estava impecável e os clientes ficaram muito satisfeitos com a receptividade.|0
+Solicito revisão imediata do contrato n° 4782-XY, especificamente nas cláusulas 5.3 (confidencialidade) e 8.7 (penalidades). Precisamos fechar até sexta-feira.|1
+Parabéns à equipe de vendas pelo recorde mensal! Este resultado reflete o esforço coletivo e comprometimento de todos vocês.|0
+Precisamos resolver o problema de autenticação no sistema CRM que está impedindo o time comercial de acessar os históricos de clientes. Prioridade máxima.|1
+Apenas encaminhando o informe mensal de compliance para conhecimento geral. Favor atentar às novas diretrizes da política de segurança a partir do próximo mês.|0
+Urgente: Cliente CT-78 exigiu reunião amanhã para revisar todas as especificações técnicas do projeto Omega. Preparar apresentação detalhada e análise de riscos.|1
+Ótimo trabalho na campanha de mídia social deste trimestre! O engajamento superou todas as expectativas do setor.|0
+Necessitamos da aprovação do departamento jurídico para o novo processo de aquisição de suprimentos até quinta-feira. Encaminhem documentação completa.|1
+Lembrando a todos que amanhã será o aniversário de 10 anos da empresa. Teremos bolo e café na área de convivência às 15h.|0
+Favor providenciar relatório detalhado das horas trabalhadas no projeto Alpha com breakdown por disciplina e justificativas de overtime até às 17h.|1
+Agradeço profundamente pela colaboração de todos durante a auditoria interna. O resultado foi extremamente positivo.|0
+Solicito retorno técnico sobre a viabilidade de implementação do módulo de IA no sistema principal até quarta-feira. Consultem a equipe de inovação.|1
+Comunicamos que o estacionamento térreo estará em manutenção na próxima semana. Utilizarem os vagas do subsolo.|0
+Preciso de voluntários para o comitê de avaliação de novos fornecedores. Reuniões semanais às quartas-feiras. Interessados enviar confirmação até sexta.|1
+Parabéns à Maria pelo prêmio de Funcionária do Mês! Sua dedicação inspira toda a equipe.|0
+Cliente solicita renegociação de prazos para entrega do lote 3B. Analisar impactos no cronograma e custos. Retornar com proposta até amanhã.|1
+Ótima notícia: o escritório de São Paulo ultrapassou a meta de faturamento do semestre! Comemoremos este marco.|0
+Problema crítico: servidor da AWS apresentou falha às 11h23. Necessária ação imediata da equipe de infraestrutura. Atualizar a cada hora.|1
+Agradecimentos especiais ao time de limpeza pela organização impecável durante a visita dos investidores internacionais.|0
+Preciso que a equipe de desenvolvimento priorize a correção do bug crítico no módulo de pagamentos, que está causando falhas nas transações do cliente.|1
+Gostaria de parabenizar a todos pelo sucesso do evento beneficente de ontem, que arrecadou mais de R$ 50.000 para a instituição local.|0
+Solicito a atualização imediata dos dados cadastrais dos clientes da região nordeste no sistema, com prioridade para os inativos há mais de 6 meses.|1
+Agradeço imensamente pelo apoio durante minha licença médica. Foi reconfortante saber que a equipe manteve tudo funcionando perfeitamente.|0
+Necessito da análise financeira detalhada do último trimestre, com foco nas variações de custos operacionais e projeções para o próximo semestre.|1
+Comunicamos que o café da manhã colaborativo de sexta-feira foi cancelado devido às restrições do novo protocolo sanitário.|0
+Urgente: Reagendar todas as reuniões com clientes internacionais para a próxima semana devido aos problemas de conexão com a VPN.|1
+Parabéns ao time de pesquisa pelo reconhecimento internacional do estudo sobre sustentabilidade publicado na revista científica.|0
+Documentação do projeto Gamma precisa ser revisada e submetida para aprovação do comitê executivo até quinta-feira, 14h.|1
+Agradecimentos especiais ao departamento de logística pela entrega flawless do material para a conferência anual.|0
+Problema no servidor de e-mail requer intervenção imediata do suporte técnico. Vários departamentos reportaram falhas no envio de mensagens.|1
+Comemoramos a conquista do prêmio de Melhor Empresa para Trabalhar pelo quarto ano consecutivo! Orgulho de todos vocês.|0
+Relatório de compliance do Q3 deve ser entregue até sexta-feira com a assinatura de todos os gerentes de departamento.|1
+Informamos que o horário de funcionamento do escritório durante as festas de fim de ano será reduzido em 2 horas diárias.|0
+Todos os gestores devem enviar seu feedback sobre o novo sistema de avaliação de desempenho até o final do dia útil.|1
+Feliz aniversário ao nosso CEO! Desejamos muito sucesso e realização pessoal e profissional no ano que se inicia.|0
+Cliente solicita reunião emergencial para discutir não conformidades no produto entregue. Preparar análise técnica detalhada.|1
+Agradecemos a todos pela participação no treinamento voluntário de primeiros socorros realizado no último sábado.|0
+Migração do banco de dados principal precisa ser remarcada devido a conflitos de agendamento com a equipe de infraestrutura.|1
+Parabéns à equipe de inovação pelo lançamento bem-sucedido do novo aplicativo mobile, que já teve 10.000 downloads em 24h.|0
