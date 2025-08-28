@@ -8,6 +8,7 @@ from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 DATA_DIR = BASE_DIR / "data"
 CLASSIFIER_DIR = BASE_DIR / "classifier"
+
 CLASSIFIER_DIR.mkdir(exist_ok=True)
 
 df = pd.read_csv(DATA_DIR / "email_data.txt", delimiter="|")
@@ -45,8 +46,9 @@ def train(feature_set):
 
     return accuracy, classifier
 
-accuracy, classifier = train(dataset)
-print(f"Acurácia: {accuracy:.2f}")
+if __name__ == "__main__":
+    accuracy, classifier = train(dataset)
+    print(f"Acurácia: {accuracy:.2f}")
 
-with open(CLASSIFIER_DIR / "emailclassifier.pkl", "wb") as f:
-    pickle.dump(classifier, f)
+    with open(CLASSIFIER_DIR / "emailclassifier.pkl", "wb") as f:
+        pickle.dump(classifier, f)
