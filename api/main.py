@@ -4,7 +4,7 @@ import pickle
 from pathlib import Path
 app = Flask(__name__)
 
-BASE_DIR = Path(__file__).resolve().parent
+BASE_DIR = Path(__file__).resolve().parent.parent
 CLASSIFIER_PATH = BASE_DIR / "api" / "classifier" / "emailclassifier.pkl"
 with open(CLASSIFIER_PATH, "rb") as f:
     classifier = pickle.load(f)
