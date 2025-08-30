@@ -34,7 +34,7 @@ function App() {
               placeholder="Digite o e-mail que recebeu aqui..."
               className="resize-none h-40 "
             />
-            <Button className="pt-5">Analise o E-mail</Button>
+            <Button className="pt-5 ">Analise o E-mail</Button>
           </CardContent>
       </Card>
     </div>
