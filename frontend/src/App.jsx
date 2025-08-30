@@ -1,30 +1,27 @@
-import { useState } from 'react'
+import { useState } from "react";
 import {
   Card,
-  CardAction,
   CardContent,
   CardDescription,
-  CardFooter,
   CardHeader,
   CardTitle,
-} from "@/components/ui/card"
-import { Textarea } from "@/components/ui/textarea"
-import { Button } from "@/components/ui/button"
+} from "@/components/ui/card";
+import { Textarea } from "@/components/ui/textarea";
+import { Button } from "@/components/ui/button";
 
-function App() {
+export default function App() {
   const [emailText, setEmailText] = useState("");
 
   return (
-    <div className="max-w-4xl mx-auto p-6 space-y-6">
-      <div className="text-center space-y-2">
-        <div className="flex items-center justify-center gap-2">
-          <h1 className="text-3xl">ProdMail</h1>
-        </div>
-        <p className="text-muted-foreground">
+    <div className="min-h-screen flex flex-col items-center pt-4">
+      <div className="text-center mb-4">
+        <h1 className="text-3xl font-bold pt-10">ProdMail</h1>
+        <p className="text-muted-foreground pb-2">
           Analise seus e-mails e ganhe + produtividade
         </p>
       </div>
-      <Card className="max-w-2xl mx-auto shadow-lg">
+
+      <Card className="w-full max-w-2xl shadow-lg">
         <CardHeader>
           <CardTitle>Conteúdo do E-mail</CardTitle>
           <CardDescription className="text-sm md:text-base">
@@ -32,17 +29,15 @@ function App() {
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
-            <Textarea
-              placeholder="Digite o e-mail que recebeu aqui..."
-              className="resize-none h-40"
-              value={emailText}
-              onChange={(e) => setEmailText(e.target.value)}
-            />
-            <Button disabled={!emailText.trim()} className="pt-5"> Analise o E-mail</Button>
-          </CardContent>
+          <Textarea
+            placeholder="Digite o e-mail que recebeu aqui..."
+            className="resize-none h-40"
+            value={emailText}
+            onChange={(e) => setEmailText(e.target.value)}
+          />
+          <Button disabled={!emailText.trim()}>Analise o E-mail</Button>
+        </CardContent>
       </Card>
     </div>
-  )
+  );
 }
-
-export default App
