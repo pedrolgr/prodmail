@@ -12,6 +12,8 @@ import { Textarea } from "@/components/ui/textarea"
 import { Button } from "@/components/ui/button"
 
 function App() {
+  const [emailText, setEmailText] = useState("");
+
   return (
     <div className="max-w-4xl mx-auto p-6 space-y-6">
       <div className="text-center space-y-2">
@@ -32,9 +34,11 @@ function App() {
         <CardContent className="space-y-4">
             <Textarea
               placeholder="Digite o e-mail que recebeu aqui..."
-              className="resize-none h-40 "
+              className="resize-none h-40"
+              value={emailText}
+              onChange={(e) => setEmailText(e.target.value)}
             />
-            <Button className="pt-5 ">Analise o E-mail</Button>
+            <Button disabled={!emailText.trim()} className="pt-5"> Analise o E-mail</Button>
           </CardContent>
       </Card>
     </div>
