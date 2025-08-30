@@ -1,16 +1,27 @@
 import { useState } from "react";
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardHeader,
-  CardTitle,
-} from "@/components/ui/card";
+import axios from "axios";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 
 export default function App() {
   const [emailText, setEmailText] = useState("");
+
+  const handleSubmit = async () => {
+
+    if (emailText.trim() !== "") {
+      try {
+        const response = await axios.post(import.meta.env.VITE_API_URL, {
+          email: emailText,
+        });
+
+        console.log(response)
+      } catch (error) {
+        console.log(error)
+      }
+    }
+
+  };
 
   return (
     <div className="min-h-screen flex flex-col items-center pt-4">
@@ -35,7 +46,7 @@ export default function App() {
             value={emailText}
             onChange={(e) => setEmailText(e.target.value)}
           />
-          <Button disabled={!emailText.trim()}>Analise o E-mail</Button>
+          <Button onClick={handleSubmit} disabled={!emailText.trim()}>Analise o E-mail</Button>
         </CardContent>
       </Card>
     </div>
