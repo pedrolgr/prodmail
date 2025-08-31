@@ -1,49 +1,76 @@
 import { useState, useRef } from "react";
 import axios from "axios";
+import * as pdfjsLib from "pdfjs-dist";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Separator } from "@/components/ui/separator"
-import { Badge } from "@/components/ui/badge"
-import { Loader2, CircleX, CircleCheckBig, Upload } from "lucide-react"
+import { Separator } from "@/components/ui/separator";
+import { Badge } from "@/components/ui/badge";
+import { Loader2, CircleX, CircleCheckBig, Upload } from "lucide-react";
 
 export default function App() {
   const [emailText, setEmailText] = useState("");
   const [loading, setLoading] = useState(false);
   const [responseData, setResponseData] = useState(null);
-
   const fileInputRef = useRef(null);
 
-  const handleFileClick = () => {
-    fileInputRef.current.click();
-  };
-
+  const handleFileClick = () => fileInputRef.current.click();
   const isDisabled = loading || emailText.trim() === "";
 
-  const handleSubmit = async () => {
+  const extractTextFromPDF = async (file) => {
+    const arrayBuffer = await file.arrayBuffer();
+    const pdf = await pdfjsLib.getDocument({ data: arrayBuffer }).promise;
+
+    let fullText = "";
+    for (let i = 1; i <= pdf.numPages; i++) {
+      const page = await pdf.getPage(i);
+      const content = await page.getTextContent();
+      const strings = content.items.map((item) => item.str);
+      fullText += strings.join(" ") + "\n";
+    }
+    return fullText;
+  };
+
+  const extractTextFromTXT = async (file) => file.text();
+
+  const handleFileChange = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
 
     setLoading(true);
+    let text = "";
 
-    if (emailText.trim() !== "") {
-      try {
-        const response = await axios.post(import.meta.env.VITE_API_URL, {
-          email: emailText,
-        });
-
-        setLoading(true)
-        setResponseData(response.data)
-
-      } catch (error) {
-        console.error(error)
+    try {
+      if (file.name.endsWith(".pdf")) {
+        text = await extractTextFromPDF(file);
+      } else if (file.name.endsWith(".txt")) {
+        text = await extractTextFromTXT(file);
       }
+      setEmailText(text);
+    } catch (err) {
+      console.error("Erro ao ler o arquivo:", err);
     }
 
     setLoading(false);
   };
 
+  const handleSubmit = async () => {
+    setLoading(true);
+    if (emailText.trim() !== "") {
+      try {
+        const response = await axios.post(import.meta.env.VITE_API_URL, {
+          email: emailText,
+        });
+        setResponseData(response.data);
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    setLoading(false);
+  };
+
   return (
     <div className="min-h-screen w-screen flex flex-col items-center pt-4">
-
       <div className="text-center mb-4">
         <h1 className="text-3xl font-bold pt-10">ProdMail</h1>
         <p className="text-muted-foreground pb-2">
@@ -55,7 +82,7 @@ export default function App() {
         <CardHeader>
           <CardTitle>Conteúdo do E-mail</CardTitle>
           <CardDescription className="text-sm md:text-base">
-            Cole o e-mail abaixo ou arraste o arquivo com e-mail para ser analisado
+            Cole o e-mail abaixo ou envie um arquivo (.pdf, .txt)
           </CardDescription>
         </CardHeader>
         <CardContent className="space-y-4">
@@ -69,19 +96,22 @@ export default function App() {
             {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {loading ? "Analisando..." : "Analise o E-mail"}
           </Button>
-          <Button variant="outline" className="w-full" onClick={handleFileClick}>
-            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {!loading && <Upload className="mr-2 h-4 w-4" />}
-            {loading ? "Analisando..." : "Envie seu arquivo"}
+          <Button
+            variant="outline"
+            className="w-full"
+            onClick={handleFileClick}
+            disabled={loading}
+          >
+            <Upload className="mr-2 h-4 w-4" />
+            {loading ? "Processando..." : "Envie seu arquivo"}
           </Button>
-          
           <input
-          type="file"
-          ref={fileInputRef}
-          className="hidden"
-          accept=".pdf,.txt,.eml"
+            type="file"
+            ref={fileInputRef}
+            className="hidden"
+            accept=".pdf,.txt"
+            onChange={handleFileChange}
           />
-          
         </CardContent>
       </Card>
 
@@ -89,19 +119,14 @@ export default function App() {
         <Card className="w-full mt-5 max-w-2xl shadow-lg">
           <CardHeader className="justify-start">
             <CardTitle className="inline-flex items-center">
-
               <div>
                 <div className="inline-flex items-center">
-                  {responseData.label === 0 ? (
-                    <CircleX className="" />
-                  ) : (
-                    <CircleCheckBig />
-                  )}
-                  <p className="pl-2">Resultado da Análises</p>
+                  {responseData.label === 0 ? <CircleX /> : <CircleCheckBig />}
+                  <p className="pl-2">Resultado da Análise</p>
                 </div>
 
                 <div className="flex items-center gap-2 pt-5">
-                  <span className="">Classificação do e-mail:</span>
+                  <span>Classificação do e-mail:</span>
                   {responseData.label === 0 ? (
                     <Badge variant="destructive">Improdutivo</Badge>
                   ) : (
@@ -109,25 +134,21 @@ export default function App() {
                   )}
                 </div>
               </div>
-
             </CardTitle>
           </CardHeader>
+
           <div className="pr-5 pl-5">
             <Separator />
           </div>
 
-          {
-            responseData.suggestions.map((suggestion) => (
-              <Card className="w-9/10 m-auto break-all">
-                <CardHeader className="flex items-center">
-                  <CardTitle>{suggestion}</CardTitle>
-                </CardHeader>
-              </Card>
-            ))
-          }
-
+          {responseData.suggestions.map((suggestion, idx) => (
+            <Card key={idx} className="w-9/10 m-auto break-normal">
+              <CardHeader className="flex items-center">
+                <CardTitle>{suggestion}</CardTitle>
+              </CardHeader>
+            </Card>
+          ))}
         </Card>
-
       )}
     </div>
   );
