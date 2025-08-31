@@ -1,16 +1,22 @@
-import { useState } from "react";
+import { useState, useRef } from "react";
 import axios from "axios";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator"
 import { Badge } from "@/components/ui/badge"
-import { Loader2, CircleX, CircleCheckBig } from "lucide-react"
+import { Loader2, CircleX, CircleCheckBig, Upload } from "lucide-react"
 
 export default function App() {
   const [emailText, setEmailText] = useState("");
   const [loading, setLoading] = useState(false);
   const [responseData, setResponseData] = useState(null);
+
+  const fileInputRef = useRef(null);
+
+  const handleFileClick = () => {
+    fileInputRef.current.click();
+  };
 
   const isDisabled = loading || emailText.trim() === "";
 
@@ -63,6 +69,19 @@ export default function App() {
             {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
             {loading ? "Analisando..." : "Analise o E-mail"}
           </Button>
+          <Button variant="outline" className="w-full" onClick={handleFileClick}>
+            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {!loading && <Upload className="mr-2 h-4 w-4" />}
+            {loading ? "Analisando..." : "Envie seu arquivo"}
+          </Button>
+          
+          <input
+          type="file"
+          ref={fileInputRef}
+          className="hidden"
+          accept=".pdf,.txt,.eml"
+          />
+          
         </CardContent>
       </Card>
 
@@ -96,7 +115,7 @@ export default function App() {
           <div className="pr-5 pl-5">
             <Separator />
           </div>
-          
+
           {
             responseData.suggestions.map((suggestion) => (
               <Card className="w-9/10 m-auto break-all">
