@@ -23,12 +23,15 @@ export default function App() {
         const response = await axios.post(import.meta.env.VITE_API_URL, {
           email: emailText,
         });
-        console.log(import.meta.env.VITE_API_URL)
+
         setLoading(true)
         setResponseData(response.data)
+        console.log(responseData.suggestions)
+        console.log(typeof responseData.suggestions)
+        console.log(responseData.suggestions[0])
 
       } catch (error) {
-         console.log(import.meta.env.VITE_API_URL)
+        console.log(import.meta.env.VITE_API_URL)
         console.error(error)
       }
     }
@@ -73,23 +76,23 @@ export default function App() {
             <CardTitle className="inline-flex items-center">
 
               <div>
-                  <div className="inline-flex items-center">
-                    {responseData.label === 0 ? (
-                      <CircleX className="" />
-                    ) : (
-                      <CircleCheckBig />
-                    )}
-                    <p className="pl-2">Resultado da Análises</p>
-                  </div>
+                <div className="inline-flex items-center">
+                  {responseData.label === 0 ? (
+                    <CircleX className="" />
+                  ) : (
+                    <CircleCheckBig />
+                  )}
+                  <p className="pl-2">Resultado da Análises</p>
+                </div>
 
-                  <div className="flex items-center gap-2 pt-5">
-                    <span className="">Classificação do e-mail:</span>
-                    {responseData.label === 0 ? (
-                      <Badge variant="destructive">Improdutivo</Badge>
-                    ) : (
-                      <Badge>Produtivo</Badge>
-                    )}
-                  </div>
+                <div className="flex items-center gap-2 pt-5">
+                  <span className="">Classificação do e-mail:</span>
+                  {responseData.label === 0 ? (
+                    <Badge variant="destructive">Improdutivo</Badge>
+                  ) : (
+                    <Badge>Produtivo</Badge>
+                  )}
+                </div>
               </div>
 
             </CardTitle>
@@ -97,13 +100,17 @@ export default function App() {
           <div className="pr-5 pl-5">
             <Separator />
           </div>
-          <CardContent>
-            {responseData.error ? (
-              <CardDescription>{responseData.error}</CardDescription>
-            ) : (
-              <CardDescription>{responseData.error}</CardDescription>
-            )}
-          </CardContent>
+          
+          {
+            responseData.suggestions.map((suggestion) => (
+              <Card className="w-9/10 m-auto break-all">
+                <CardHeader className="flex items-center">
+                  <CardTitle>{suggestion}</CardTitle>
+                </CardHeader>
+              </Card>
+            ))
+          }
+
         </Card>
 
       )}
