@@ -26,12 +26,8 @@ export default function App() {
 
         setLoading(true)
         setResponseData(response.data)
-        console.log(responseData.suggestions)
-        console.log(typeof responseData.suggestions)
-        console.log(responseData.suggestions[0])
 
       } catch (error) {
-        console.log(import.meta.env.VITE_API_URL)
         console.error(error)
       }
     }
