@@ -8,6 +8,9 @@ import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
 import { Loader2, CircleX, CircleCheckBig, Upload } from "lucide-react";
 
+import pdfWorker from "pdfjs-dist/build/pdf.worker?url";
+pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
+
 export default function App() {
   const [emailText, setEmailText] = useState("");
   const [loading, setLoading] = useState(false);
