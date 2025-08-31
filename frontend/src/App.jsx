@@ -3,11 +3,17 @@ import axios from "axios";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
+import { Loader2 } from "lucide-react"
 
 export default function App() {
   const [emailText, setEmailText] = useState("");
+  const [loading, setLoading] = useState(false);
 
+  const isDisabled = loading || emailText.trim() === "";
+  
   const handleSubmit = async () => {
+
+    setLoading(true);
 
     if (emailText.trim() !== "") {
       try {
@@ -15,12 +21,12 @@ export default function App() {
           email: emailText,
         });
 
-        console.log(response)
+        setLoading(true)
       } catch (error) {
-        console.log(error)
+        console.error(error)
       }
     }
-
+    setLoading(false);
   };
 
   return (
@@ -46,7 +52,10 @@ export default function App() {
             value={emailText}
             onChange={(e) => setEmailText(e.target.value)}
           />
-          <Button onClick={handleSubmit} disabled={!emailText.trim()}>Analise o E-mail</Button>
+          <Button onClick={handleSubmit} disabled={isDisabled}>
+            {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
+            {loading ? "" : "Analise o E-mail"}
+          </Button>
         </CardContent>
       </Card>
     </div>
