@@ -23,11 +23,12 @@ export default function App() {
         const response = await axios.post(import.meta.env.VITE_API_URL, {
           email: emailText,
         });
-
+        console.log(import.meta.env.VITE_API_URL)
         setLoading(true)
         setResponseData(response.data)
 
       } catch (error) {
+         console.log(import.meta.env.VITE_API_URL)
         console.error(error)
       }
     }
@@ -59,9 +60,9 @@ export default function App() {
             value={emailText}
             onChange={(e) => setEmailText(e.target.value)}
           />
-          <Button onClick={handleSubmit} disabled={isDisabled}>
+          <Button onClick={handleSubmit} disabled={isDisabled} className="w-full">
             {loading && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-            {loading ? "" : "Analise o E-mail"}
+            {loading ? "Analisando..." : "Analise o E-mail"}
           </Button>
         </CardContent>
       </Card>
