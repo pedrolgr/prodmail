@@ -39,3 +39,74 @@ Cliente solicita reunião emergencial para discutir não conformidades no produt
 Agradecemos a todos pela participação no treinamento voluntário de primeiros socorros realizado no último sábado.|0
 Migração do banco de dados principal precisa ser remarcada devido a conflitos de agendamento com a equipe de infraestrutura.|1
 Parabéns à equipe de inovação pelo lançamento bem-sucedido do novo aplicativo mobile, que já teve 10.000 downloads em 24h.|0
+Obrigado pelo retorno|0
+Obrigado.|0
+Boa tarde.|0
+Só queria agradecer novamente pela sua incrível contribuição no projeto.|0
+Compartilhando um artigo interessante que li sobre tendências de mercado (sem ação necessária).|0
+Circulando feedback positivo que recebemos do cliente sobre o último delivery.|0
+Parabéns pelo trabalho! Agora pare tudo e corrija o bug em produção que acabei de reportar.|1
+Quando tiver um tempo livre (hoje ainda), precise revisar a vulnerabilidade de segurança.|1
+Além do reconhecimento, preciso que você treine o novo estagiário ainda esta semana.|1
+Só queria reforçar que não há nenhuma ação necessária da sua parte sobre o que discutimos.|0
+Só passando para dizer que não precisamos nos preocupar com o assunto anterior.|0
+Compartilhando boas notícias que não impactam em nenhuma tarefa ou prazo existente.|0
+Circulando vibrações positivas completamente dissociadas de qualquer tarefa prática.|0
+Compartilhando sentimentos positivos sem nenhuma expectativa de resposta ou ação.|0
+Circulando felicitações que não requerem nenhum tipo de retorno ou ação.|0
+Só um quick note: não esqueça de reverter o deploy que quebrou produção antes de sair.|1
+Além dos parabéns, preciso que você investigue o memory leak em produção urgentemente.|1
+Só um toque rápido: não esqueça que o certificado SSL expira em 2 horas.|1
+Além do obrigado, precise recriar todos os backups que corromperam durante a noite.|1
+No ritmo dos agradecimentos: o monitoring alertou que todos os servidores estão sobrecarregados.|1
+No embalo dos parabéns: todas as senhas foram resetadas acidentalmente, precisa corrigir.|1
+Só queria deixar registrado que absolutamente nenhuma ação é requerida deste email.|0
+Só compartilhando alegria que não está vinculada a nenhum item de ação ou follow-up.|0
+Só distribuindo positividade que não demanda nenhum tipo de engajamento operacional.|0
+Gostaria de agendar a consulta médica para a semana que vem, qual horário disponível?|0
+Gostaria de remarcar a entrega dos móveis para o sábado pela manhã.|0
+Favor confirmar os horários das aulas de piano do próximo mês.|0
+Preciso da aprovação do orçamento para a reforma da sala de reuniões até amanhã às 16h.|1
+Solicito análise urgente da proposta comercial do fornecedor Alternativo Ltda. comparando com nossos padrões.|1
+Necessito que a equipe de TI priorize a migração dos dados do departamento financeiro para a nuvem esta semana.|1
+Cliente solicita reunião técnica para revisar as não conformidades do último lote entregue. Preparar documentação.|1
+Urgente: Problema no sistema de ponto eletrônico requer correção imediata. Vários funcionários não conseguiram registrar entrada.|1
+Precisamos agendar treinamento de compliance anti-suborno para todos os gestores até o final do mês.|1
+Solicito relatório detalhado de todas as despesas com viagens corporativas do último semestre.|1
+Problema no gateway de pagamento: transações sendo recusadas indevidamente. Prioridade máxima.|1
+Necessito da lista atualizada de todos os contratos que vencem nos próximos 60 dias para renovação.|1
+Favor providenciar laudo técnico completo sobre o incidente de segurança ocorrido na última terça-feira.|1
+Cliente exige renegociação de prazos para o projeto Delta. Analisar viabilidade e impactos.|1
+Solicito cotação de três fornecedores diferentes para os novos equipamentos de escritório.|1
+Problema crítico: servidor de arquivos apresentou falha. Necessária intervenção imediata.|1
+Preciso do plano de ação detalhado para mitigar os riscos identificados na última auditoria.|1
+Urgente: Reagendar todas as reuniões externas devido à indisponibilidade do carro corporativo.|1
+Necessito da aprovação jurídica para o novo termo de confidencialidade até sexta-feira.|1
+Solicito reunião emergencial com o departamento de RH para discutir o turnover do último trimestre.|1
+Problema no sistema de reservas: clientes reportando dupla cobrança. Corrigir imediatamente.|1
+Preciso do cronograma revisado do projeto Gamma com novas datas de entrega.|1
+Favor enviar análise de mercado completa para o novo produto que será lançado no próximo trimestre.|1
+Cliente solicita demonstração técnica do produto para amanhã. Preparar material de apoio.|1
+Problema na integração com API dos correios: rastreamentos não estão sendo atualizados.|1
+Solicito relatório de produtividade de todos os departamentos do último mês.|1
+Urgente: Validar certificado digital da empresa que expira em 48 horas.|1
+Agradeço pelo empenho de todos durante o evento de integração da nova equipe.|0
+Parabéns ao time de desenvolvimento pelo aniversário de 5 anos do nosso sistema principal!|0
+Compartilhando fotos do último team building para todos aproveitarem as lembranças.|0
+Só passando para desejar um final de semana relaxante a todos os colegas!|0
+Agradecimentos especiais ao pessoal da copa pelo café especial desta manhã.|0
+Comemorando o sucesso do programa de estágio que formou 25 novos talentos este ano.|0
+Circulando mensagem positiva do cliente sobre o atendimento recehido na última semana.|0
+Feliz aniversário ao nosso coordenador! Desejamos muita saúde e felicidade.|0
+Agradeço a compreensão de todos durante os ajustes do novo layout do escritório.|0
+Parabéns à equipe pelo espírito colaborativo demonstrado durante o último projeto desafiador.|0
+Só queria compartilhar que não há nenhuma pendência ou ação requerida deste comunicado.|0
+Compartilhando artigo interessante sobre bem-estar no trabalho (leitura opcional).|0
+Agradecimentos pela participação massiva na campanha do agasalho deste ano.|0
+Parabéns a todos pelo ambiente de trabalho positivo que temos construído juntos.|0
+Só circulando energias positivas para iniciarmos bem a semana.|0
+Compartilhando o reconhecimento que recebemos da matriz pelo nosso desempenho.|0
+Agradeço pelo clima harmonioso durante a última reunião de diretoria.|0
+Parabéns pelo trabalho em equipe demonstrado no último desafio corporativo.|0
+Só registrando que este e-mail não requer nenhum tipo de resposta ou ação.|0
+Compartilhando vibrações positivas para o fechamento do trimestre.|0
