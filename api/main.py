@@ -6,7 +6,7 @@ import pickle
 from pathlib import Path
 
 app = Flask(__name__)
-cors = CORS(app, resources={r"/api/*": {"origins": "https://prodmail.vercel.app"}})
+cors = CORS(app, resources={r"/api/*": {"origins": "*"}})
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 CLASSIFIER_PATH = BASE_DIR / "api" / "classifier" / "emailclassifier.pkl"
@@ -28,7 +28,7 @@ def classify_email():
         "email": data["email"],
         "label": label,
         "classification": "PRODUTIVO" if label == 1 else "IMPRODUTIVO",
-        "suggestions": [suggestions]
+        "suggestions": suggestions
     })
 
 if __name__ == "__main__":
