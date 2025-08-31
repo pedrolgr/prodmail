@@ -1,5 +1,6 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
+from api.gemini.gemini import gemini
 from api.training.training_model import preprocess, get_features
 import pickle
 from pathlib import Path
@@ -21,11 +22,13 @@ def classify_email():
     tokens = preprocess(data["email"])
     features = get_features(tokens)
     label = classifier.classify(features)
+    suggestions = gemini(data["email"])
 
     return jsonify({
         "email": data["email"],
         "label": label,
-        "classification": "PRODUTIVO" if label == 1 else "IMPRODUTIVO"
+        "classification": "PRODUTIVO" if label == 1 else "IMPRODUTIVO",
+        "suggestions": suggestions
     })
 
 if __name__ == "__main__":
