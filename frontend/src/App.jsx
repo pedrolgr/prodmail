@@ -3,14 +3,17 @@ import axios from "axios";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
-import { Loader2 } from "lucide-react"
+import { Separator } from "@/components/ui/separator"
+import { Badge } from "@/components/ui/badge"
+import { Loader2, CircleX, CircleCheckBig } from "lucide-react"
 
 export default function App() {
   const [emailText, setEmailText] = useState("");
   const [loading, setLoading] = useState(false);
+  const [responseData, setResponseData] = useState(null);
 
   const isDisabled = loading || emailText.trim() === "";
-  
+
   const handleSubmit = async () => {
 
     setLoading(true);
@@ -22,15 +25,19 @@ export default function App() {
         });
 
         setLoading(true)
+        setResponseData(response.data)
+
       } catch (error) {
         console.error(error)
       }
     }
+
     setLoading(false);
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center pt-4">
+    <div className="min-h-screen w-screen flex flex-col items-center pt-4">
+
       <div className="text-center mb-4">
         <h1 className="text-3xl font-bold pt-10">ProdMail</h1>
         <p className="text-muted-foreground pb-2">
@@ -58,6 +65,47 @@ export default function App() {
           </Button>
         </CardContent>
       </Card>
+
+      {responseData && (
+        <Card className="w-full mt-5 max-w-2xl shadow-lg">
+          <CardHeader className="justify-start">
+            <CardTitle className="inline-flex items-center">
+
+              <div>
+                  <div className="inline-flex items-center">
+                    {responseData.label === 0 ? (
+                      <CircleX className="" />
+                    ) : (
+                      <CircleCheckBig />
+                    )}
+                    <p className="pl-2">Resultado da Análises</p>
+                  </div>
+
+                  <div className="flex items-center gap-2 pt-5">
+                    <span className="">Classificação do e-mail:</span>
+                    {responseData.label === 0 ? (
+                      <Badge variant="destructive">Improdutivo</Badge>
+                    ) : (
+                      <Badge>Produtivo</Badge>
+                    )}
+                  </div>
+              </div>
+
+            </CardTitle>
+          </CardHeader>
+          <div className="pr-5 pl-5">
+            <Separator />
+          </div>
+          <CardContent>
+            {responseData.error ? (
+              <CardDescription>{responseData.error}</CardDescription>
+            ) : (
+              <CardDescription>{responseData.error}</CardDescription>
+            )}
+          </CardContent>
+        </Card>
+
+      )}
     </div>
   );
 }

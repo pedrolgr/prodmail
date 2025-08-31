@@ -151,10 +151,6 @@
   --shadow-2xl: var(--shadow-2xl);
 }
 
-* {
-  width: 100%;
-}
-
 a {
   font-weight: 500;
   color: #646cff;
