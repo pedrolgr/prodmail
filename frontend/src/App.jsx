@@ -6,7 +6,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { Badge } from "@/components/ui/badge";
-import { Loader2, CircleX, CircleCheckBig, Upload } from "lucide-react";
+import { Loader2, CircleX, CircleCheckBig, Upload, ClipboardCopy, Send } from "lucide-react";
 
 import pdfWorker from "pdfjs-dist/build/pdf.worker?url";
 pdfjsLib.GlobalWorkerOptions.workerSrc = pdfWorker;
@@ -145,9 +145,26 @@ export default function App() {
           </div>
 
           {responseData.suggestions.map((suggestion, idx) => (
-            <Card key={idx} className="w-9/10 m-auto break-normal">
-              <CardHeader className="flex items-center">
-                <CardTitle>{suggestion}</CardTitle>
+            <Card key={idx} className="w-[90%] m-auto break-words my-2">
+              <CardHeader className="flex items-center justify-between">
+                <div className="flex items-center gap-2">
+                  <button
+                    onClick={() => navigator.clipboard.writeText(suggestion)}
+                    className="text-gray-500 hover:text-gray-800 cursor-pointer"
+                  >
+                    <ClipboardCopy size={20} />
+                  </button>
+                  <CardTitle>{suggestion}</CardTitle>
+                </div>
+
+                <div>
+                  <a
+                    href={`mailto:?body=${encodeURIComponent(suggestion)}`}
+                    className="text-gray-500 hover:text-gray-800"
+                  >
+                    <Send size={20} />
+                  </a>
+                </div>
               </CardHeader>
             </Card>
           ))}
