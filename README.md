@@ -1,10 +1,11 @@
 # ProdMail
-O ProdMail é um projeto que visa classificar e-mails como produtivos ou improdutivos e gerar uma sugestão de resposta para responde-los.<br><br>
+O ProdMail é um projeto que visa classificar e-mails como produtivos ou improdutivos e gerar uma sugestão de resposta para responde-los.<br>
 
 <img width="1648" height="941" alt="image" src="https://github.com/user-attachments/assets/0e86c0b1-ea5c-43ef-b1cf-c89264bf1387" />
 
-Pode acontecer do servidor backend estar hibernando por estar parado por muito tempo (limitação do plano FREE do Render), então acesse primeiro o link https://prodmail-backend.onrender.com/ e aguarde para iniciar o servidor.<br><br>
-Para acessar e testar a aplicação, acesse pelo link https://prodmail.vercel.app/.
+Para acessar e testar a aplicação, acesse pelo link https://prodmail.vercel.app/.<br><br>
+Caso a análise esteja demorando muito para aparecer, provavelmente o servidor backend está hibernando por ter ficado muito tempo sem receber requisições (limitação do plano FREE do Render). Para contornar isso, criei um CronJob para o servidor não cair, mas caso perceba a demora da análise, acesse o link https://prodmail-backend.onrender.com/ e aguarde alguns segundos para iniciar o servidor.
+
 
 ## Estrutura do Projeto
 
